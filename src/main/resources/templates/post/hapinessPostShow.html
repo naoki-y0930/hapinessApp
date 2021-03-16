@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>hapinessPostShow</title>
+ <link rel="stylesheet" href="">
+ <!-- IE8以下でもHTML5のページを表示することが可能 -->
+ <!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+ <![endif]-->
+ <!--相対パスでJSファイルを読み込む  -->
+ <script src=""></script>
+ </head>
+
+ <body>
+  <h1>投稿詳細</h1>
+   <table>
+	   <thead>
+		   <tr>
+		   <th>id</th>
+		   <th>body</th>
+		   <th>投稿日</th>
+	   </tr>
+	   </thead>
+	   <tbody>
+		   <tr>
+			   <td><span th:text="${hapinessPostFindOneEntity.userId}"></span></td>
+			   <td><span th:text="${hapinessPostFindOneEntity.body}"></span></td>
+			   <td><span th:text="${hapinessPostFindOneEntity.createDateTime}"></span></td>
+
+       <a th:href="@{'/post/edit/' + ${hapinessPostFindOneEntity.userId} + '/' + ${hapinessPostFindOneEntity.createDateTime}}">編集する</a>
+		   </tr>
+	   </tbody>
+      </table>
+      <a th:href="@{'/post/delete/' + ${hapinessPostFindOneEntity.userId} + '/' + ${hapinessPostFindOneEntity.createDateTime}}">削除する</a>
+<a th:href="@{/post}">一覧に戻る</a>
+      </body>
+     </html>

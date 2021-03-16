@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>hapinessPostNew</title>
+ <link rel="stylesheet" href="">
+ <!-- IE8以下でもHTML5のページを表示することが可能 -->
+ <!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+ <![endif]-->
+ <!--相対パスでJSファイルを読み込む  -->
+ <script src=""></script>
+ </head>
+ <body>
+  <h1>新しい投稿</h1>
+   <form th:object="${hapinessPostCreateEntity}" th:action="@{/post}" th:method="post">
+    <label for="body">投稿内容</label>
+    <textarea th:field="*{body}" cols="40" rows="10"></textarea>
+      <p th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></p>
+
+
+      <button type="submit">投稿する</button>
+ <a th:href="@{/post}">戻る</a>
+   </form>
+
+       <!-- #calendars.createNowForTimeZone('Asia/Tokyo') -->
+<p th:text="${#calendars.format(#calendars.createNowForTimeZone('Asia/Tokyo'), 'yyyy年MM月dd日 HH時mm分ss秒')}"></p>
+ <a th:href="@{/post}">戻る</a>
+ </body>
+</html>

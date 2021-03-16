@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>ただのtest</title>
+ <link rel="stylesheet" href="">
+ <!-- IE8以下でもHTML5のページを表示することが可能 -->
+ <!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+ <![endif]-->
+ <!--相対パスでJSファイルを読み込む  -->
+ <script src=""></script>
+ </head>
+
+ <body>
+
+ <h1>testTitle</h1>
+<table>
+<thead>
+ <tr>
+   <th>id</th>
+   <th>body</th>
+   <th>日付</th>
+ </tr>
+ <tbody>
+  <tr th:each="post : ${posts}">
+   <td><a th:href="@{'/post/' + ${post.hapinessPostPK.userId} + '/' + ${post.hapinessPostPK.createDateTime}}"><span th:text="${post.hapinessPostPK.userId}"></span></a></td>
+   <td><span th:text="${post.body}"></span></td>
+   <td><span th:text="${post.hapinessPostPK.createDateTime}"></span></td>
+  </tr>
+ </tbody>
+</table>
+ <a th:href="@{/post/new}">新規投稿</a>
+
+ <div id="rink">ここに飛びます</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+  <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+  <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+  <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+  <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+ <div>a</div>
+<a href="http://localhost:8080/post#rink">ここをクリック！</a>
+ </body>
+</html>
